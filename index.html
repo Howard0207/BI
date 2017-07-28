@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta charset="UTF-8">
+	<title>BI系统</title>
+	<link rel="stylesheet" href="__PUBLIC__/Bi/css/colorpicker.css">
+	<link rel="stylesheet" href="__PUBLIC__/Bi/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/Bi/css/comm.css">
+	<link rel="stylesheet" href="__PUBLIC__/Bi/css/new-BI.css">
+</head>
+<body>
+<!-- iframe -->
+<div class="iframe">
+<iframe class="iframe2" id="iFrame" src="__MODULE__/Bipage/index" frameborder="0"></iframe>
+</div>
+
+<!-- bi系统 -->
+<div class="bi">
+	<input type='hidden' name='tablename' id="filename" value='<?=$tablename?>'/>
+	<input type='hidden' name='proid' id="proid" value='<?=$proid?>'/>
+	<input type='hidden' name='proid' id="public" value='<?=$public?>'/>
+	<input type='hidden' name='proid' id="url" value='<?=$url?>'/>
+	<script type="application/x-javascript">
+		var url = document.getElementById('url').value;
+		var public = document.getElementById('public').value;
+	</script>
+	<!-- 可视化 筛选器 -->
+	<div class="seeData bg" >
+		<div class="title" title="显示/隐藏窗格"><span>可视化</span><i class="glyphicon glyphicon-chevron-right"></i></div>
+		<ul class="icon">
+			<li title="堆积条形图" name="bar"></li>
+			<li title="堆积柱形图"></li>
+			<li title="簇形条形图"></li>
+			<li title="簇形柱形图"></li>
+			<li title="百分比堆积条形图"></li>
+			<li title="百分比堆积柱形图" name="line"></li>
+			<li title="折线图" name="line"></li>
+			<li title="分区图"></li>
+			<li title="堆积面积图" name="area"></li>
+			<li title="折线和堆积柱形图"></li>
+			<li title="折线和簇形柱形图"></li>
+			<li title="瀑布图"></li>
+			<li title="气泡图" name="bubble"></li>
+			<li title="饼图"></li>
+			<li title="环形图"></li>
+			<li title="树状图"></li>
+			<li title="地图"></li>
+			<li title="着色地图"></li>
+			<li title="漏斗图"></li>
+			<li title="仪表"></li>
+			<li title="卡片图"></li>
+			<li title="多行卡"></li>
+			<li title="KPI"></li>
+			<li title="切片图"></li>
+			<li title="表"></li>
+			<li title="矩阵"></li>
+			<li title="R 脚本 visual"></li>
+			<li title="地图"></li>
+			<li title="导入自定义"></li>
+
+		</ul>
+		<div class="title2">
+			<span class="leftIcon" title="字段"></span>
+			<span class="rightIcon" title="格式"></span>
+			<span class="fenxiIcon" title="分析"></span>
+		</div>
+		<!-- -->
+	<div class="con-data content">
+		<div class="one">
+			<p>值</p>
+			<div class="drag">拖动数据字段到此处</div>
+			<!-- 线图配置 -->
+			<!-- 气泡图配置 -->
+		<div class="data_tb">
+			
+		</div>
+	</div>
+		<div class="title2 mg-t-10">
+			<strong>筛选器</strong>
+		</div>
+		<div class="two">
+			<p>页面级筛选器</p>
+			<div class="drag">拖动数据字段到此处</div>
+			<p>报告级筛选器</p>
+			<div class="drag">拖动数据字段到此处</div>
+		</div>
+
+	</div>
+	<div class="con-type content">
+		<div class="pageMessage">
+		<dd>
+			<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>页面信息</span></div>
+			<div class="li"><span>名称</span><input class="page" type="text" value="第一页"></div>
+			<div class="li"><span>问答</span><span class="btnW">关</span><div class="switch"><b></b></div></div>
+			<textarea name="" id="" cols="22" rows="5" placeholder="添加使用都好分隔得备用名称"></textarea>
+		</dd>
+		<dd>
+			<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>页面大小</span></div>
+			<!-- 类型 -->
+			<div class="li"><span>类型</span>
+				<select class="whPrpo" name="" id="">
+					<option value="16:09">16:09</option>
+					<option value="4:03">4:03</option>
+					<option value="Cortana">Cortana</option>
+					<option value="信件">信件</option>
+					<option value="自定义">自定义</option>
+				</select>
+			</div>
+			<div class="pageW pageWH">
+				<span class="colorFFF">宽度</span>
+				<div class="wOption">
+					<input type="text" class="wNum" value="960" disabled="disabled">
+					<select class="wType" disabled="disabled">
+						<option value="像素">像素</option>
+					</select>
+				</div>
+			</div>
+			<div class="pageH pageWH">
+				<span class="colorFFF">高度</span>
+				<div class="wOption">
+					<input type="text" class="wNum" value="960" disabled="disabled">
+					<select class="wType" disabled="disable">
+						<option value="像素">像素</option>
+					</select>
+				</div>
+			</div>
+		</dd>
+		<dd>
+			<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>页面背景</span></div>
+			<div class="li">
+				<span>颜色</span>
+				<div class="ColorPicker pageColor"><i></i><span class=""></span></div>
+			</div>
+			<div class="range pageOp">
+				<span>不透明度</span>
+				<div class="num"><input type="text" value="100"><i>%</i></div>
+				<div class="rangeLine"><b></b></div>
+			</div>
+			<!-- 添加背景图片 -->
+			
+			<div class="addImg">
+				<div id="preview" class="preview"><span>背景图片</span></div>
+				<form enctype="multipart/form-data" action="" method="post">
+				    <a href="javascript:;" class="file">选择文件
+					    <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" name="" id="iii">
+					</a>
+					<a href="javascript:;" class="file sub">提交
+						<input type="submit">
+					</a>
+					
+				</form>
+			</div>
+		
+		</dd>
+		</div>
+		<!-- 线图配置 -->
+		<div class="data_tb">
+			<!--<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>基础配置</span></div>
+				<div class="li"><span>图表标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span>图表类型</span>
+					<span class="tb_tp">线图</span>
+				</div>
+				<div class="li">
+					<span>背景</span>
+					<div class="ColorPicker tableColor"><i></i><span class=""></span></div>
+
+				</div>
+
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>x轴</span></div>
+				<div class="li"><span>x轴标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span title="文本颜色">文本颜色</span>
+					<div class="ColorPicker xColor"><i></i><span class=""></span></div>
+				</div>
+				<div class="range li fontSizeX">
+					<span title="文本大小">文本大小</span>
+					<div class="num"><input class="rangeIpt" type="text" value="0"><i>px</i></div>
+					<div class="rangeLine"><b></b></div>
+				</div>
+				<div class="li">  
+					<span>tickmark placement</span>
+					<select name="" id="" style="float:left;margin-bottom:10px">
+						<option value="">之上</option>
+						<option value="">之间</option>
+					</select>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>y轴</span></div>
+				<div class="li"><span>y轴标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span title="文本颜色">文本颜色</span>
+					<div class="ColorPicker yColor"><i></i><span class=""></span></div>
+				</div>
+				<div class="range li fontSizeY">
+					<span title="文本大小">文本大小</span>
+					<div class="num"><input class="rangeIpt" type="text" value="0"><i>px</i></div>
+					<div class="rangeLine"><b></b></div>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>图例</span></div>
+				<div class="li"><span>图表标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span>水平布局</span>
+					<select name="" id="">
+					<option value="">左</option>
+					<option value="">中</option>
+					<option value="">右</option>
+					</select>
+				</div>
+				<div class="li">
+					<span>垂直布局</span>
+					<select name="" id="">
+					<option value="">上</option>
+					<option value="">中</option>
+					<option value="">下</option>
+					</select>
+				</div>
+				<div class="li">
+					<span>layout布局</span>
+					<select name="" id="">
+					<option value="">水平</option>
+					<option value="">垂直</option>
+					</select>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>数据提示框</span></div>
+				<div class="li"><span>共享</span>
+				<select name="" id="">
+				<option value="">是</option>
+				<option value="">否</option>
+				</select>
+				</div>
+				<div class="li">
+				<span>前置内容</span>
+				</div>
+				<input class="context" type="text">
+				<div class="li">
+				<span>后置内容</span>
+				</div>
+				<input class="context" type="text">
+				<div class="range li folatNum">
+				<span>小数位数</span>
+				<div class="num"><input class="rangeIpt" type="text" value="0"><i>位</i></div>
+				<div class="rangeLine"><b></b></div>
+				</div>
+				<div class="li">
+					<span title="数据颜色">数据颜色</span>
+					<div class="ColorPicker nColor"><i></i><span class=""></span></div>
+				</div>
+			</dd>-->
+		</div>
+		<!-- 气泡图配置 -->
+		<!--<div class="bubble data_tb">
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>基础配置</span></div>
+				<div class="li"><span>图表标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span>图表类型</span>
+					<span class="tb_tp">气泡图</span>
+				</div>
+				<div class="li">
+					<span>背景</span>
+					<div class="ColorPicker tableColor"><i></i><span class=""></span></div>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>X轴</span></div>
+				<div class="li"><span>X轴标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span title="文本颜色">文本颜色</span>
+					<div class="ColorPicker xColor"><i></i><span class=""></span></div>
+				</div>
+				<div class="range li fontSizeX">
+					<span title="文本大小">文本大小</span>
+					<div class="num"><input type="text" value="0" style="border:0px;background:none"><i>px</i></div>
+					<div class="rangeLine"><b></b></div>
+				</div>
+				<div class="li">  
+					<span>tickmark placement</span>
+					<select name="" id="" style="float:left;margin-bottom:10px">
+						<option value="">之上</option>
+						<option value="">之间</option>
+					</select>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>Y轴</span></div>
+				<div class="li"><span>Y轴标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span title="文本颜色">文本颜色</span>
+					<div class="ColorPicker yColor"><i></i><span class=""></span></div>
+				</div>
+				<div class="range li fontSizeY">
+					<span title="文本大小">文本大小</span>
+					<div class="num"><input type="text" value="0" style="border:0px;background:none"><i>px</i></div>
+					<div class="rangeLine"><b></b></div>
+				</div>
+				
+			</dd>
+			<dd>
+				<div class="head"><i class="glyphicon glyphicon-chevron-up"></i><span>图例</span></div>
+				<div class="li"><span>图表标题</span><input class="page" type="text" placeholder="请输入标题"></div>
+				<div class="li">
+					<span>水平布局</span>
+					<select name="" id="">
+					<option value="">左</option>
+					<option value="">中</option>
+					<option value="">右</option>
+					</select>
+				</div>
+				<div class="li">
+					<span>垂直布局</span>
+					<select name="" id="">
+					<option value="">上</option>
+					<option value="">中</option>
+					<option value="">下</option>
+					</select>
+				</div>
+				<div class="li">
+					<span>layout布局</span>
+					<select name="" id="">
+					<option value="">水平</option>
+					<option value="">垂直</option>
+					</select>
+				</div>
+				
+			</dd>
+		</div>-->
+	</div>
+	<div class="fenxi content">
+			<p>分析功能不适用于此视觉对象</p>
+	</div>
+</div>
+	<!-- 字段 -->
+	<div class="myData bg">
+	<div class="title" title="显示和隐藏窗格"><span>数据源</span><i class="glyphicon glyphicon-chevron-right"></i></div>
+	<!-- 搜索 -->
+	<div class="getData">
+		<button type="file"><b>+</b>获取数据源<input type="file"></button>
+	</div>
+	<ul class="newData">
+	</ul>
+	</div>
+</div>
+
+<script src="__PUBLIC__/Bi/js/jquery-3.2.0.min.js"></script>
+<script src="__PUBLIC__/Bi/js/colorpicker.js"></script>
+<script src="__PUBLIC__/Bi/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/Bi/js/functionModule.js"></script>
+<script src="__PUBLIC__/Bi/js/new-BI.js"></script>
+<script src="__PUBLIC__/Bi/js/highcharts.js"></script>
+<script src="__PUBLIC__/Bi/js/highcharts-more.js"></script>
+<script src="__PUBLIC__/Bi/js/chart.js"></script>
+<script>
+    tableInit.tableReq();
+    function allowDrop(ev){
+        ev.preventDefault();
+    }
+
+    function drag(ev){
+        console.log(ev);
+        ev.dataTransfer.setData("Text",ev.target.innerText);
+    }
+
+    function drop(ev){
+        var text=ev.dataTransfer.getData("Text");
+        var target = ev.target;
+        var id = target.id;
+        var time = new Date().getTime().toString();
+        var index = time.substr(time.length-4)+parseInt(Math.random()*10);
+        if($(target).attr('name')=='xlabel'){
+            target.innerText = text;
+            ev.preventDefault();
+            return true;
+        }
+        if($(target).attr('name')=='ylabel'){
+            if($(target).attr('flag')=='true'){
+                target.innerText = text;
+                $(target).attr('flag','false');
+            }else{
+                console.log(id,index);
+                var yId = id.substr(0,id.length-4)+index;
+                var div = dom.yLabel();
+                div.attr('id',yId);
+                var objPar = $(target).parent();
+                objPar.append(div);
+                div.text(text);
+            }
+        }
+        ev.preventDefault();
+    }
+</script>
+</body>
+</html>
