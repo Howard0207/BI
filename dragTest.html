@@ -3,8 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #container{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+            position:absolute;
+            top:300px;
+            left:300px;
+        }
+        .box{
+            z-index: 10;
+            width:10px;
+            height:10px;
+            background:cadetblue;
+            position:absolute;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .tl{
+
+        }
+        .bl{
+            top:100%;
+
+        }
+        .tr{
+            left:100%;
+        }
+        .br{
+            left:100%;
+            top:100%;
+
+        }
+        .tc{
+            left:50%;
+
+        }
+        .bc{
+            left:50%;
+            top:100%;
+
+        }
+        .lc{
+            top:50%;
+        }
+        .rc{
+            top:50%;
+            left:100%;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="container">
+        <div class="tl box"></div>
+        <div class="tc box"></div>
+        <div class="tr box"></div>
+        <div class="bl box"></div>
+        <div class="bc box"></div>
+        <div class="br box"></div>
+        <div class="lc box"></div>
+        <div class="rc box"></div>
+    </div>
 </body>
+<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script>
+    <!--左上-->
+    $('.tl').on('mousedown',function (e) {
+        var e = e || window.event;
+        var container = $('#container');
+        e.stopImmediatePropagation();
+        var x = e.clientX;
+        var y = e.clientY;
+        var left = 0;
+        var top = 0;
+        var w = container.width();
+        var	h = container.height();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            top  = e.clientY;
+            var dt = w+(x-left);
+            var dl = h+(y-top);
+            if(dt<=0){
+                left = x+w;
+            }
+            if(dl<=0){
+                top  = y+h;
+            }
+            $("#container").css({top:top,left:left}).width(dt).height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+    // 右上
+    $('.tr').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var container = $('#container');
+        var x = e.clientX;
+        var y = e.clientY;
+        var left = 0;
+        var top = 0;
+        var w = container.width();
+        var	h = container.height();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            top  = e.clientY;
+            var dt = w+(left-x);
+            var dl = h+(y-top);
+            if(dl<=0){
+                top  = y+h;
+            }
+            console.log(dt,dl);
+            console.log(x,y,left,top);
+            $("#container").css({top:top}).width(dt).height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+    // 中上
+    $('.tc').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var y = e.clientY;
+        var top = 0;
+        var	h = $("#container").height();
+        $(document).bind('mousemove',function (e) {
+            top  = e.clientY;
+            var dl = h+(y-top);
+            if(dl<=0){
+                top  = y+h;
+            }
+            $("#container").css({top:top}).height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+    // 中下
+    $('.bc').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var y = e.clientY;
+        var top = 0;
+        var	h = $("#container").height();
+        $(document).bind('mousemove',function (e) {
+            top  = e.clientY;
+            var dl = h+(top-y);
+            $("#container").height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+
+    // 左中
+    $('.lc').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var x = e.clientX;
+        var left = 0;
+        var w = $("#container").width();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            var dt = w+(x-left);
+            if(dt<=0){
+                left = x+w;
+            }
+            $("#container").css({left:left}).width(dt);
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+
+    // 右中
+    $('.rc').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var x = e.clientX;
+        var w = $("#container").width();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            var dt = w+(left-x);
+            $("#container").width(dt);
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+
+    // 左下
+    $('.bl').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var container = $('#container');
+        var x = e.clientX;
+        var y = e.clientY;
+        var left = 0;
+        var top = 0;
+        var w = container.width();
+        var	h = container.height();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            top  = e.clientY;
+            var dt = w+(x-left);
+            var dl = h+(top-y);
+            if(dt<=0){
+                left = x+w;
+            }
+            $("#container").css({left:left}).width(dt).height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+    // 右下
+    $('.br').on('mousedown',function (e) {
+        var e = e || window.event;
+        e.stopImmediatePropagation();
+        var container = $('#container');
+        var x = e.clientX;
+        var y = e.clientY;
+        var left = 0;
+        var top = 0;
+        var w = container.width();
+        var	h = container.height();
+        $(document).bind('mousemove',function (e) {
+            left = e.clientX;
+            top  = e.clientY;
+            var dt = w+(left-x);
+            var dl = h+(top-y);
+            $("#container").width(dt).height(dl);
+
+        });
+        $(document).bind('mouseup',function (e) {
+            $(document).unbind('mousemove');
+            $(document).unbind('mouseup');
+        });
+    });
+</script>
 </html>
