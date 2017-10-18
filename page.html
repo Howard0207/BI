@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../icon/iconfont.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body,.wrap{
+            width:100%;
+            height:100%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow: hidden;
+        }
+/*左侧内容设置--Start*/
+        .wrap .leftSide{
+            width:80px;
+            height:100%;
+            background: #282d31;
+            float:left;
+            position:relative;
+        }
+
+        /*左侧用户选项卡 悬停样式 --Start*/
+        .wrap .leftSide section:hover{
+            cursor: pointer;
+        }
+        /*左侧用户选项卡 悬停样式 --End*/
+
+        /*头像设置 -- Start*/
+        #user_head_portrait{
+            width:50px;
+            margin:10px auto;
+            overflow: hidden;
+        }
+        #user_head_portrait .icon-shenglvehao{
+            color: #595958;
+            text-align: center;
+            font-size:30px;
+            font-weight:bold;
+            display: block;
+        }
+        #user_head_portrait .user_head_portrait_img{
+            width:50px;
+            height:50px;
+            display: block;
+            background:url("6.jpg");
+            background-position:center;
+            background-origin: border-box;
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        /*头像设置 -- End*/
+
+
+        /*用户Items配置--Start*/
+        .userItems {
+            width:50px;
+            margin:0 auto;
+            text-align: center;
+        }
+
+
+        .userItems .icon-shenglvehao{
+            color: #595958;
+            text-align: center;
+            font-size:30px;
+            font-weight:bold;
+        }
+
+        .userItems .pageIconSize{
+            font-size:30px;
+            color: #fff;
+        }
+
+        .userItems .pageIconTitle{
+            font-size: 12px;
+            color: #feba09;
+            padding-top: 10px;
+        }
+
+
+        .itemsSlideBar{
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            display: block;
+            border-top: 3px solid transparent;
+            border-left: 3px solid #e62854;
+            border-right: 3px solid transparent;
+            height: 65px;
+            border-bottom: 3px solid transparent;
+            top: 98px;
+            position: absolute;
+            transition: all 0.5s;
+        }
+        .leftSide>i.NO1{
+            top:98px;
+        }
+        .leftSide>i.NO2{
+            top:188px;
+        }
+        .leftSide>i.NO3{
+            top:278px;
+        }
+        .leftSide>i.NO4{
+            top:368px;
+        }
+
+
+
+        /*用户Items配置 --End*/
+
+/*左侧内容设置--End*/
+
+/* 右侧内容设置 --Start*/
+        .wrap .rightSide{
+            width:calc(100% - 80px);
+            height:100%;
+            float:left;
+        }
+        .wrap .rightSide .pageTitle{
+            height:50px;
+            width:100%;
+            background: #36424e;
+        }
+        .wrap .rightSide div #projectContent{
+            height:100%;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.64);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: absolute;
+            top:-100%;
+        }
+
+        .wrap .rightSide #myDataContent{
+            height:100%;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(126, 95, 246, 0.64);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: absolute;
+            top:-100%;
+        }
+        .wrap .rightSide #dataConstruction{
+            height:100%;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(255, 75, 55, 0.64);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: absolute;
+            top:-100%;
+        }
+        .wrap .rightSide #myDataCase{
+            height:100%;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.64);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: absolute;
+            top:-100%;
+        }
+        .wrap .rightSide #projectContent .projectChartView .projectTitle{
+            height:30px;
+            background: #7e5ff6;
+        }
+        .wrap .rightSide #projectContent .projectChartView{
+            height:100%;
+            width: calc(100% - 300px);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.64);
+            float: left;
+        }
+        .wrap .rightSide #projectContent .options .dataView{
+            width:150px;
+            height:100%;
+            float: left;
+            background: #ececec;
+        }
+        .wrap .rightSide #projectContent .options .dataSource{
+            width:150px;
+            height:100%;
+            float: left;
+            background: #ececec;
+        }
+
+        /*msg,money,工单等配置 -- Start*/
+        .wrap .rightSide .pageTitle{
+            overflow: hidden;
+            background: #2e3a46;
+        }
+        .wrap .rightSide .pageTitle #userMsg{
+            float: left;
+            height:100%;
+        }
+        .wrap .rightSide .pageTitle #userMsg ul{
+            list-style: none;
+            height:100%;
+            overflow: hidden;
+            padding:0 20px;
+        }
+        .wrap .rightSide .pageTitle #userMsg ul li{
+            float: left;
+            height:100%;
+            width:80px;
+            padding:12px 5px;
+        }
+        .wrap .rightSide .pageTitle #userMsg ul li .userMsg{
+            width:25px;
+            height:20px;
+            display:inline-block;
+            font-size:25px;
+            text-align: center;
+            vertical-align: text-bottom;
+            color:#bababa;
+        }
+
+
+        .wrap .rightSide .pageTitle #userMsg ul li .userMsgText{
+            font-size:17px;
+            display:inline-block;
+            vertical-align: middle;
+            color: #bababa;
+        }
+
+        /*右侧公司logo*/
+        .wrap .rightSide .pageTitle #companyLogo{
+            float: right;
+            height:100%;
+        }
+
+        .wrap .rightSide .pageTitle #companyLogo img{
+            height: 100%;
+        }
+
+        /*msg,money,工单等配置 -- End*/
+
+
+        /*userItems激活右侧显示控制 --Start*/
+        .activeContent{
+            top:0 !important;
+            z-index:10;
+        }
+        /*userItems激活右侧显示控制 --End*/
+
+        /*可视化配置 --Start*/
+
+
+        .wrap .rightSide #projectContent .options{
+            float: left;
+            overflow: hidden;
+            height: 100%;
+        }
+        .wrap .rightSide #projectContent .options .dataView .dataView-text{
+            width:100%;
+            height:30px;
+            background: #565c68;
+            color: #fff;
+            font-weight:bolder;
+            padding:0 10px;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .wrap .rightSide #projectContent .options .dataView .dataView-text span{
+            font-size:17px;
+            display: block;
+            float: left;
+            margin-left:10px;
+            height:30px;
+            line-height:30px;
+        }
+        .wrap .icon-trangle{
+            width:17px;
+            height:30px;
+            display: block;
+            line-height: 30px;
+            float: right;
+        }
+
+        .wrap .rightSide #projectContent .options .dataView .chartDisplay{
+            width:100%;
+            height:150px;
+            background: #ececec;
+        }
+        /*图表具体信息配置 --Start*/
+        .wrap .rightSide #projectContent .options .dataView .chartInfoConf{
+            height:200px;
+            background: #f9f9f9;
+        }
+        .wrap .rightSide #projectContent .options .dataView .chartInfoConf .chartInfoConfItems{
+            width:100%;
+            height:30px;
+            background: #555c66;
+            border-top:1px solid #555c66;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: 0 10px;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .wrap .rightSide #projectContent .options .dataView .chartInfoConf .chartInfoConfItems span{
+            height: 30px;
+            display: block;
+            float: left;
+            line-height: 30px;
+            padding: 0 10px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            color: #fff;
+        }
+        .chartInfoItemsActive{
+            background: #f9f9f9;
+            color: #8a8a8a !important;
+        }
+        /*图表具体信息配置 --End*/
+        /*数据筛选器配置--Start*/
+        .wrap .rightSide #projectContent .options .dataView .dataFilter{
+            width:100%;
+
+        }
+        .wrap .rightSide #projectContent .options .dataView .dataFilter .dataFilterTitle{
+            width:100%;
+            height:30px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #555c66;
+            line-height: 30px;
+            padding: 0 10px;
+            color: #fff;
+        }
+
+
+        /*数据筛选器配置 --End*/
+        /*可视化配置 --End*/
+
+
+        /*数据源配置 -- Start*/
+        .wrap .rightSide #projectContent .dataSource{
+            border-left:1px solid #d4d9dc;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .wrap .rightSide #projectContent .dataSource .dataSource-text{
+            width:100%;
+            height:30px;
+            background: #565c68;
+            color: #fff;
+            font-weight:bolder;
+            padding:0 10px;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .wrap .rightSide #projectContent .dataSource .dataSource-text span{
+            font-size:17px;
+            display: block;
+            float: left;
+            margin-left:10px;
+            height:30px;
+            line-height:30px;
+        }
+        /*数据源配置 -- End*/
+/*右侧内容设置 --End*/
+
+
+
+        .moved{
+            position: absolute;
+            z-index: 10000;
+        }
+        .selected{
+            position: relative;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!--左侧边栏用户信息-->
+        <aside class="leftSide">
+            <section id="user_head_portrait">
+                <i class="user_head_portrait_img"></i>
+                <i class="iconfont icon-shenglvehao"></i>
+            </section>
+            <section id="myDataView" class="userItems">
+                <div>
+                    <i class="iconfont icon-shujufenxi pageIconSize"></i>
+                    <div class="pageIconTitle">
+                        可视化
+                    </div>
+                    <i class="iconfont icon-shenglvehao"></i>
+                </div>
+            </section>
+            <section id="myData" class="userItems">
+                <div>
+                    <i class="iconfont icon-ziyuanbaosongshujudaoru pageIconSize"></i>
+                    <div class="pageIconTitle">
+                        我的数据
+                    </div>
+                    <i class="iconfont icon-shenglvehao"></i>
+                </div>
+            </section>
+            <section id="dataConstructor" class="userItems">
+                <div>
+                    <i class="iconfont icon-shujujianmo pageIconSize"></i>
+                    <div class="pageIconTitle">
+                        数据建模
+                    </div>
+                    <i class="iconfont icon-shenglvehao"></i>
+                </div>
+            </section>
+            <section id="myDataShow" class="userItems">
+                <div>
+                    <i class="iconfont icon-anli pageIconSize"></i>
+                    <div class="pageIconTitle">
+                        我的案例
+                    </div>
+                    <i class="iconfont icon-shenglvehao"></i>
+                </div>
+            </section>
+            <i class="itemsSlideBar"></i>
+        </aside>
+
+        <!--项目详情-->
+        <aside class="rightSide">
+            <nav class="pageTitle">
+                <div id="userMsg">
+                    <ul>
+                        <li>
+                            <i class="userMsg iconfont icon-message"></i>
+                            <span class="userMsgText">消息</span>
+                        </li>
+                        <li>
+                            <i class="userMsg iconfont icon-money"></i>
+                            <span class="userMsgText">费用</span>
+                        </li>
+                        <li>
+                            <i class="userMsg iconfont icon-gongdan"></i>
+                            <span class="userMsgText">工单</span>
+                        </li>
+                        <li>
+                            <i class="userMsg iconfont icon-search"></i>
+                            <span class="userMsgText">搜索</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="companyLogo">
+                    <img src="./companyLogo.png" alt="24e全天智能">
+                </div>
+            </nav>
+            <div style="height:100%;overflow:hidden;position:relative" class="aa">
+                <section id="projectContent" class="activeContent">
+                    <section class="projectChartView">
+                        <nav class="projectTitle"></nav>
+                    </section>
+                    <section class="options">
+                        <aside class="dataView">
+                            <section class="dataView-text">
+                                <span>可视化</span>
+                                <i class="iconfont icon-down-trangle-copy icon-trangle"></i>
+                            </section>
+
+                            <section class="chartDisplay">
+
+                            </section>
+
+                            <section class="chartInfoConf">
+                                <div class="chartInfoConfItems">
+                                    <span class="chartInfoItemsActive">字段</span>
+                                    <span>格式</span>
+                                </div>
+                                <div>
+
+                                </div>
+                            </section>
+                            <section class="dataFilter">
+                                <div class="dataFilterTitle">筛选器</div>
+                                <div>
+
+                                </div>
+                            </section>
+                        </aside>
+                        <aside class="dataSource">
+                            <section class="dataSource-text">
+                                <span>数据源</span>
+                                <i class="iconfont icon-down-trangle-copy icon-trangle"></i>
+                            </section>
+                        </aside>
+                    </section>
+                </section>
+                <section id="myDataContent"></section>
+                <section id="dataConstruction"></section>
+                <section id="myDataCase"></section>
+            </div>
+        </aside>
+    </div>
+
+
+    <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js'></script>
+    <script>
+        $('.dataView,.dataSource').on('mousedown',function(event){
+            var e = window.event || event;
+            // 将对象放到内存当中
+            var that = this;
+            // 判断当前状态是否已经脱离文档流
+            if(!$(that).hasClass('moved')){
+                $(that).addClass('selected');
+            }
+            // 获取拖拽对象当前top值，left值
+            var targetTop  = $(that).position().top;
+            var targetLeft = $(that).position().left;
+            // 获取鼠标当前位置
+            var x1 = e.clientX;
+            var y1 = e.clientY;
+            // 获取文档宽、高
+            var width = $(document).width();
+            var height = $(document).height();
+            // 获取祖父级dom宽度
+            var projContentW = $('#projectContent').width();
+            // 获取父级的dom
+            var opts = $('.options');
+            // 获取父级兄弟dom
+            var content = $('.projectChartView');
+            // 拖拽过程
+            $(document).on('mousemove',function(event){
+                // 设置even事件
+                var e = window.event || event;
+                // 获取当前鼠标的位置
+                var x2 = e.clientX;
+                var y2 = e.clientY;
+                // 判断当前是否处于移动状态
+                if($(that).hasClass('selected')){
+                    $(that).addClass('moved').removeClass('selected');
+                }
+                // 获取当前元素父元素的宽度
+                var optW1 = opts.width();
+                // 设置当前元素父元素的兄弟元素的宽度
+                content.css({
+                    width:projContentW-optW1+"px"
+                });
+
+                // 计算当前元素的位置。
+                var top  = targetTop - (y1-y2);
+                var left = targetLeft + (x2-x1);
+                // 判定工具栏是否回到默认位置
+                if (width-x2<20) {
+                    $(that).removeClass('moved').removeAttr("style");
+                    var optW2 = opts.width();
+                    content.css({
+                        width:projContentW-optW2+"px"
+                    });
+                    // 解绑document事件
+                    $(document).unbind('mousemove');
+                    $(document).unbind('mouseup');
+                    return false;
+                }
+                // 防止工具栏脱离文档顶部
+                if(top<= 0){
+                    top =0;
+                }
+                // 防止工具栏脱离文档底部
+                if(top>height-80){
+                    top = height-80;
+                }
+                // 防止工具栏脱离文档左侧
+                if(left<0){
+                    left=0;
+                }
+                // 设置工具栏位置大小
+                $(that).css({position:"absolute",top:top+"px",left:left+"px",height:"500px",width:"150px"});
+            });
+
+            // 释放鼠标
+            $(document).on('mouseup',function(event){
+                var e = window.event || event;
+                // 获取当前鼠标的位置
+                var x2 = e.clientX;
+                // 判断当前元素是否回到默认位置
+                if(width-x2<20){
+                    // 去掉当前元素移动过程中添加的样式
+                    $(that).removeClass('moved').removeAttr("style");
+                    // 获取当前元素父元素宽度
+                    var optW3 = opts.width();
+                    // 设置当前元素父元素兄弟元素的宽度
+                    content.css({
+                        width:projContentW-optW3+"px"
+                    });
+                }
+                // 解绑document事件
+                $(document).unbind('mousemove');
+                $(document).unbind('mouseup');
+            });
+        });
+
+
+
+        $('.userItems').click(function(){
+            var that = this;
+            var arr = ["NO1","NO2","NO3","NO4"];
+            var idx = null;
+            $('.userItems').each(function(index,ele){
+                if(ele === that){
+                    idx = index;
+                }
+                $('i').removeClass(arr[index]);
+            });
+            $('i').addClass(arr[idx]);
+            $('.aa').children().eq(idx).addClass('activeContent').siblings().removeClass('activeContent');
+        });
+    </script>
+</body>
+</html>
